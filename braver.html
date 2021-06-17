@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Just do it!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class='theme2'>
+    <div id="message" class='medium space'>Remember: A 30% is better than a 0% on an assignment. A 30% meant you tried some. A 0% meant you did nothing.</div>
+    <div id='arrows' class='small'><span class='arrow' onclick="previous()">⬅️</span><strong id='number'>1</strong><span class='arrow' onclick="next()">➡️</span></div>
+    <audio id='press'>
+      <source src="media/Button Push.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+      var scene = 0;
+      var braveQuotes = ["Remember: A 30% is better than a 0% on an assignment. A 30% meant you tried some. A 0% meant you did nothing.",
+      "But why get a 30%? What would cause the 30%? Would the consequences be more trivial or more catastrophic?",
+      "Learn life and technical skills. Keep learning them to acquire these skills. You will become much better if you do so.",
+      "If you tried and failed, learn from your mistakes. Don't repeat them. Just try harder and better than last time.",
+      "When you try harder and better, aim for a higher percentage. Repeat until you get to 110%.",
+      "If you're struggling to do an important assignment that isn't due today, try to do it all <u>today</u>. Go back to it tomorrow, search for mistakes, and fix them.",
+      "You made it this far? You have the energy to <span id='stress'>JUST DO IT!</span>",
+      "You're not doing it? Fine. You may as well <u id='clickhere' onclick='pushTheButton()'>click here.</u>"];
+
+      function next()
+      {
+        scene++;
+        if(scene === braveQuotes.length)
+          scene--;
+        document.getElementById("message").innerHTML = braveQuotes[scene];
+        document.getElementById("number").innerHTML = scene + 1;
+      }
+      function previous()
+      {
+        scene--;
+        if(scene === -1)
+          scene++;
+        document.getElementById("message").innerHTML = braveQuotes[scene];
+        document.getElementById("number").innerHTML = scene + 1;
+      }
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      async function pushTheButton()
+      {
+        document.getElementById("press").play();
+        document.getElementById("clickhere").style.color = 'white';
+        await sleep(1750);
+        location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+      }
+    </script>
+  </body>
+</html>

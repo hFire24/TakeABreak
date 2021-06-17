@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take multiple breaks.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body onload="getWidth()" onresize="getWidth()">
+    <h1>Multiple redirect screens!</h1>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="breaktime.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="breaktime.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="breaktime.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="breaktime.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="bigbreak.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="bigbreak.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="bigbreak.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="bigbreak.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="bigbreak.html"></iframe>
+    <iframe class="iframe" width="656" height="536" frameborder="0" src="bigbreak.html"></iframe>
+  </body>
+  <script>
+    var iframe = document.getElementsByClassName('iframe');
+    function getWidth() {
+      var width = window.outerWidth;
+      if(width > 1000)
+        width = width * 0.475;
+      else {
+        width = width * 0.95;
+      }
+      for (var i in iframe) {
+        iframe[i].width = width;
+        iframe[i].height = width * 3/4;
+      }
+    }
+  </script>
+</html>
