@@ -41,7 +41,7 @@ new Breaktime('Determine what you need to do and what you want to do today.',"pa
 new Breaktime('List everything you\'re currently doing, and order them by priority.',"pass","plan2",3,false),
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan2",3,false),
   //Music
-new Breaktime('Listen to a song you haven\'t listened to before.',"pass","misc",1,false),
+new Breaktime('Listen to a song you haven\'t listened to before.',"pass","music",1,false),
 new Breaktime('Put on some music to help you focus.',"https://youtu.be/xOA0T8ZjpFQ","music",2,false),
   //Miscellaneous
 new Breaktime('Watch anime for 30 seconds.',"pass","anime",2,false),
@@ -289,7 +289,7 @@ function displayActions() {
 function finished() {
   var category = messages[globalIndex].category;
   //If the task belongs to one of those categories, then all tasks with those categories get deleted.
-  if(category === "plan" || category === "meditate" || category === "homework" || category === "food")
+  if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category = "music")
     deleteCategory(category);
   //Delete (splice) the break message away from the array.
   else {
