@@ -289,7 +289,7 @@ function displayActions() {
 function finished() {
   var category = messages[globalIndex].category;
   //If the task belongs to one of those categories, then all tasks with those categories get deleted.
-  if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category = "music")
+  if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music")
     deleteCategory(category);
   //Delete (splice) the break message away from the array.
   else {
